@@ -1,4 +1,5 @@
-# cv-php
+# cv-php-orm
+
 
 # Generating autoload files
 -> php composer.phar install
