@@ -2,6 +2,7 @@
 use App\Models\Project;
 
 $projects = project::all();
+
 function printProjects($project) {
   $technologies = $project->technologies;
   $techs = [];

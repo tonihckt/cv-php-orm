@@ -1,7 +1,7 @@
 <?php
+use App\Models\Job;
 
-use App\Models\{Job, Project};
-
+// trae todos los registros que encuentra
 $jobs = Job::all();
 
   
@@ -14,6 +14,7 @@ function printElement($job) {
     echo '<h5>' . $job->title . '</h5>';
     echo '<p>' . $job->description . '</p>';
     echo '<p>' . $job->getDurationAsString() . '</p>';
+    // echo '<p>' . $job->done=true . '</p>';
     echo '<strong>Achievements:</strong>';
     echo '<ul>';
     echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';

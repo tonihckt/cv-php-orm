@@ -1,8 +1,8 @@
 <?php
 
-require_once 'errors.php';
-require_once 'vendor/autoload.php';
-require_once 'conect_orm.php';
+// require_once 'errors.php';
+// require_once 'vendor/autoload.php';
+// require_once 'conect_orm.php';
 
 // var_dump($_GET);
 // var_dump($_POST);
