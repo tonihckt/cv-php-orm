@@ -1,27 +1,10 @@
 <?php
 
-// require_once 'vendor/autoload.php';
+require_once 'errors.php';
+require_once 'vendor/autoload.php';
+require_once 'conect_orm.php';
 
-// use Illuminate\Database\Capsule\Manager as Capsule;
-// use App\Models\Job;
-
-// $capsule = new Capsule;
-
-// $capsule->addConnection([
-//     'driver'    => 'mysql',
-//     'host'      => 'localhost',
-//     'database'  => 'cv-php',
-//     'username'  => 'root',
-//     'password'  => '',
-//     'charset'   => 'utf8',
-//     'collation' => 'utf8_unicode_ci',
-//     'prefix'    => '',
-// ]);
-
-// // Make this Capsule instance available globally via static methods... (optional)
-// $capsule->setAsGlobal();
-// // Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
-// $capsule->bootEloquent();
+use App\Models\Job;
 
 require_once('jobs.php');
 
@@ -56,10 +39,10 @@ $limitMonths = 2000;
         <h1><?php echo $name; ?></h1>
         <h2>PHP Developer</h2>
         <ul>
-          <li>Mail: hector@mail.com</li>
+          <li>Mail: toni@mail.com</li>
           <li>Phone: 1234567890</li>
           <li>LinkedIn: https://linkedin.com</li>
-          <li>Twitter: @hectorbenitez</li>
+          <li>Twitter: @toniresvalones</li>
         </ul>
       </div>
     </div>
@@ -96,7 +79,7 @@ $limitMonths = 2000;
             <ul>
             <?php
             for($idx = 0;$idx < count($projects); $idx++) {
-              printElement($projects[$idx]);
+              printProjects($projects[$idx]);
             }
             ?>
           </ul>
@@ -158,7 +141,7 @@ $limitMonths = 2000;
     </div>
     <div id="resume-footer" class="row">
       <div class="col">
-          Designed by @hectorbenitez
+          Designed by @toniresvalones
       </div>
     </div>
   </div>

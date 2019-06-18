@@ -8,6 +8,7 @@ class Job extends Model {
     //     $newTitle = 'Job: ' . $title;
     //     $this->title = $newTitle;
     // }
+    // defin¡e la tabàl quw queremos usar
     protected $table = 'jobs';
 
     public function getDurationAsString() {
