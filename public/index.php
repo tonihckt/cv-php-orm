@@ -51,7 +51,12 @@ $request = Zend\Diactoros\ServerRequestFactory::fromGlobals(
 $routerContainer = new RouterContainer();
 $map = $routerContainer->getMap();
 
-$map->get('index', '/cv-php-orm', '../index.php');
+// $map->get('index', '/cv-php-orm', '../index.php');
+$map->get('index', '/cv-php-orm', [
+    'controller' => 'App\Controllers\IndexController',
+    'action' => 'indexAction'
+]);
+
 $map->get('addJobs', '/cv-php-orm/jobs/add', '../addJob.php');
 $map->get('addProjests', '/cv-php-orm/projects/add', '../addProject.php');
 
@@ -61,7 +66,13 @@ $route = $matcher->match($request);
 if (!$route) {
     echo ' No route found ';
 } else {
-    require $route->handler;
+    $handlerData = $route->handler;
+    $controllerName = $handlerData['controller'];
+    $actionName = $handlerData['action'];
+
+    $controller = new $controllerName;
+    $controller->$actionName($request);
+
 }
 
 
