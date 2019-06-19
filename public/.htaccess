@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# si el archiv+o n¡o es un¡ direcºtorio , sigue
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# si el archiv+o n¡o es un¡ arcºhiv+o , sigue
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^ index.php [QSA,L]

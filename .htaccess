@@ -1,0 +1,13 @@
+#Inicºiamos el motor
+RewriteEngine On
+
+#condiciones para escribir
+
+#hace otro redireccionien¡to y ev+ita que en¡tremos en ciclos
+RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
+
+#reglas de direccion 
+RewriteRule ^ %1 [L,NE,R=302]
+
+# cuando en¡cuen¡tre cºualquier cºosa , lo env+ia a pub`licº
+RewriteRule ^((?!public/).*)$ public/$1 [L,NC]

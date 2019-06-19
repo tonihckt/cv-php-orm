@@ -1,0 +1,15 @@
+# posibles errores 
+-X> preg_match(): JIT compilation failed: no more memory in /Applications/MAMP/htdocs/
+-X> Warning: preg_match(): JIT compilation failed: no more memory
+
+> sudo nano /etc/php.ini.default
+
+# deshabilite la compilación JIT de PCRE de PHP cambiando:
+> pcre.jit=1 a pcre.jit=0 in php.ini
+
+# o eliminan¡do :
+> php -d pcre.jit=0 composer.phar
+
+# no hay ningún  'pcre.jit' archivo en php.ini, por lo que debe configurarlo:
+> memory_limit:128M  a> memory_limit:256M a>  memory_limit:768M
+
